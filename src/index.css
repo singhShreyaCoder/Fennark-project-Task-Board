@@ -1,0 +1,115 @@
+/* ---------------------------------------------------------
+   Global styles: design tokens, resets and shared status colours
+   --------------------------------------------------------- */
+
+:root {
+  --color-bg: #f4f6fb;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
+  --color-faint: #94a3b8;
+  --color-border: #e2e8f0;
+  --color-primary: #4f46e5;
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 9px;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 12px 28px -18px rgba(15, 23, 42, 0.35);
+  --shadow-lg: 0 28px 60px -24px rgba(15, 23, 42, 0.45);
+
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Status colour themes, shared by columns and cards */
+.status-todo {
+  --accent: #3b82f6;
+  --accent-ink: #1d4ed8;
+  --accent-soft: #eff6ff;
+  --accent-border: #bfdbfe;
+}
+
+.status-progress {
+  --accent: #f59e0b;
+  --accent-ink: #b45309;
+  --accent-soft: #fffbeb;
+  --accent-border: #fde68a;
+}
+
+.status-done {
+  --accent: #10b981;
+  --accent-ink: #047857;
+  --accent-soft: #ecfdf5;
+  --accent-border: #a7f3d0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--color-text);
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(900px 420px at 8% -8%, rgba(99, 102, 241, 0.12), transparent 65%),
+    radial-gradient(760px 380px at 100% 0%, rgba(16, 185, 129, 0.1), transparent 60%);
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
